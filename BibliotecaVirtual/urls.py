@@ -3,8 +3,8 @@ from django.urls import path
 from BibliotecaVirtual import views
 
 urlpatterns = [
-    path('', views.inicio),
-    path('libro/', views.libro),
-    path('alumno/', views.alumno),
-    path('docente/', views.docente),
+    path('', views.inicio, name="Inicio"),
+    path('libros', views.libro, name='Libros'),
+    path('alumnos', views.alumno, name='Alumnos'),
+    path('docentes', views.docente, name='Docentes'),
 ]
