@@ -11,6 +11,7 @@ El proyecto en cuestión consta de una biblioteca virtual que permite a alumnos 
 Los modelos existentes son: Libro, Alumno y Docente.
 
 Rutas existentes:
+
 BibliotecaVirtual/ - Vista de inicio con buscador de libros por código incluído. En caso de buscar un libro por código, si existe, se lo lista. Caso contrario, no aparece nada. Si no se ingresa código, se hace una advertencia en color rojo. Se puede buscar y encontrar tres libros precargados con código 1001, 1002 y 1003.
 
 BibliotecaVirtual/libros - Vista de libros con formulario para la carga de nuevos libros en la base de datos.
