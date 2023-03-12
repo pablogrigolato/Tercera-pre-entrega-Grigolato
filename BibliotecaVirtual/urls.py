@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from BibliotecaVirtual.views import libro, alumno, docente
+from BibliotecaVirtual import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('libro/', libro),
-    path('alumno/', alumno),
-    path('docente/', docente),
+    path('', views.inicio),
+    path('libro/', views.libro),
+    path('alumno/', views.alumno),
+    path('docente/', views.docente),
 ]

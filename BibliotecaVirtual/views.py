@@ -4,11 +4,14 @@ from BibliotecaVirtual.models import Libro, Alumno, Docente
 
 # Create your views here.
 
-def libro(self):
-    return HttpResponse("Libro.")
+def inicio(request):
+    return render(request, "BibliotecaVirtual/inicio.html")
 
-def alumno(self):
-    return HttpResponse("Alumno.")
+def libro(request):
+    return render(request, "BibliotecaVirtual/libros.html")
 
-def docente(self):
-    return HttpResponse("Docente.")
+def alumno(request):
+    return render(request, "BibliotecaVirtual/alumnos.html")
+
+def docente(request):
+    return render(request, "BibliotecaVirtual/docentes.html")
