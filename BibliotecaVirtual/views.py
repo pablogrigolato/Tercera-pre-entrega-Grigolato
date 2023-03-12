@@ -8,16 +8,16 @@ from BibliotecaVirtual.forms import LibroFormulario, AlumnoFormulario, DocenteFo
 def inicio(request):
     return render(request, "BibliotecaVirtual/inicio.html")
 
+#def libro(request):
+#    return render(request, "BibliotecaVirtual/libros.html")
+
+#def alumno(request):
+#    return render(request, "BibliotecaVirtual/alumnos.html")
+
+#def docente(request):
+#    return render(request, "BibliotecaVirtual/docentes.html")
+
 def libro(request):
-    return render(request, "BibliotecaVirtual/libros.html")
-
-def alumno(request):
-    return render(request, "BibliotecaVirtual/alumnos.html")
-
-def docente(request):
-    return render(request, "BibliotecaVirtual/docentes.html")
-
-def libroFormulario(request):
     if request.method == 'POST': 
         miFormulario = LibroFormulario(request.POST)
         print(miFormulario)
@@ -34,9 +34,9 @@ def libroFormulario(request):
     else:
         miFormulario = LibroFormulario()
             
-    return render(request,"BibliotecaVirtual/libroFormulario.html", {"miFormulario": miFormulario})
+    return render(request,"BibliotecaVirtual/libros.html", {"miFormulario": miFormulario})
 
-def alumnoFormulario(request):
+def alumno(request):
     if request.method == 'POST': 
         miFormulario = AlumnoFormulario(request.POST)
         print(miFormulario)
@@ -54,9 +54,9 @@ def alumnoFormulario(request):
     else:
         miFormulario = AlumnoFormulario()
             
-    return render(request,"BibliotecaVirtual/alumnoFormulario.html", {"miFormulario": miFormulario})
+    return render(request,"BibliotecaVirtual/alumnos.html", {"miFormulario": miFormulario})
 
-def docenteFormulario(request):
+def docente(request):
     if request.method == 'POST': 
         miFormulario = DocenteFormulario(request.POST)
         print(miFormulario)
@@ -75,4 +75,17 @@ def docenteFormulario(request):
     else:
         miFormulario = DocenteFormulario()
             
-    return render(request,"BibliotecaVirtual/docenteFormulario.html", {"miFormulario": miFormulario})
+    return render(request,"BibliotecaVirtual/docentes.html", {"miFormulario": miFormulario})
+
+def busquedaLibro(request):
+    return render(request,"BibliotecaVirtual/busquedaLibro.html")
+
+def buscar(request):
+    if request.GET['codigo']:
+        codigo = request.GET['codigo']
+        libros = Libro.objects.filter(codigo__icontains=codigo)
+        return render(request, "BibliotecaVirtual/inicio.html", {"libros":libros, "codigo":codigo})
+    else:
+        respuesta = "No enviaste datos."
+        
+    return render(request, "BibliotecaVirtual/inicio.html", {"respuesta":respuesta})

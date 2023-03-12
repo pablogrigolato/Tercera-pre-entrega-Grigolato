@@ -8,17 +8,9 @@
 </head>
 <body>
     
-    {% if miFormulario.errors %}
-    <p style="color: red;"> Están mal los datos, revisar.</p>
-    {% endif %}
-
-    <form action="" method="POST">{% csrf_token %}
-
-        <table>
-            {{ miFormulario.as_table }}
-        </table>
-        
-        <input type="submit" value="Enviar">
+    <form action="buscar" method="GET">
+        <input type="number" name="codigo" id="codigo">        
+        <input type="submit" value="Buscar">
     </form>
 
 </body>
