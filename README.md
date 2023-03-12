@@ -12,7 +12,11 @@ Los modelos existentes son: Libro, Alumno y Docente.
 
 Rutas existentes:
 BibliotecaVirtual/ - Vista de inicio con buscador de libros por código incluído. En caso de buscar un libro por código, si existe, se lo lista. Caso contrario, no aparece nada. Si no se ingresa código, se hace una advertencia en color rojo. Se puede buscar y encontrar tres libros precargados con código 1001, 1002 y 1003.
+
 BibliotecaVirtual/libros - Vista de libros con formulario para la carga de nuevos libros en la base de datos.
+
 BibliotecaVirtual/alumnos - Vista de alumnos con formulario para la carga de nuevos alumnos en la base de datos.
+
 BibliotecaVirtual/docentes - Vista de docentes con formulario para la carga de nuevos docentes en la base de datos.
+
 admin/ - Acceso al panel de administración. Se puede acceder al panel de administración como superusuario con los siguientes datos: user: pablo pass: 12345678
